@@ -18,6 +18,14 @@ npm run dev:all
 
 Open `http://localhost:4321`, click **Save cookie via backend**, and wait 3 seconds. The frontend asks the backend to save an HTTP-only cookie, then asks the backend to read that cookie and print the value.
 
+## Test the full browser flow
+
+The E2E test starts both hosts, opens the Astro page in Chromium, clicks the button, waits for the 3-second backend read, asserts the cookie value appears in the UI, and saves a screenshot to `test-artifacts/cookie-flow.png`.
+
+```bash
+npm run test:e2e
+```
+
 ## Configuration
 
 - `FRONTEND_ORIGIN` controls which frontend origin the backend allows for credentialed CORS requests. Default: `http://localhost:4321`.
