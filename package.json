@@ -1,0 +1,25 @@
+{
+  "name": "astro-cookies-problem-chek",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0 --port 4321",
+    "dev:backend": "node backend/server.js",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev\"",
+    "build": "astro check && astro build",
+    "preview": "astro preview --host 0.0.0.0 --port 4321",
+    "test:e2e": "node tests/cookie-flow.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "astro": "^5.18.2",
+    "concurrently": "^9.2.3",
+    "cors": "latest",
+    "express": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}
